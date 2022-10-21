@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:plant_shop/constants.dart';
+import 'package:plant_shop/pages/signUp_page.dart';
+import 'package:plant_shop/widgets/orginalButton.dart';
+import 'package:plant_shop/widgets/textform.dart';
 
-class sing_page extends StatelessWidget {
-  const sing_page({Key? key}) : super(key: key);
+class sign_page extends StatelessWidget {
+  const sign_page({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,96 +16,61 @@ class sing_page extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage(backroundimage), fit: BoxFit.fill),
           ),
-          child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 1),
+
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 1),
             child: Column(
               children: [
+                //logo image
                 const Padding(
                   padding: EdgeInsets.only(top: 50),
                     child: Image(image: AssetImage('assest/images/logo.png'),
                       height: 290,width: 250,)),
 
-                Container(
+                //text
+                SizedBox(
                   width: MediaQuery.of(context).size.width/2,
-                    child: Text("No longer to forget watering your plants!",
+                    child: const Text("No longer to forget watering your plants!",
                     style: TextStyle(fontSize: 20,color:Color.fromARGB(255, 24, 59, 87) ),
                     )),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height /8,
-                  //  height: 750.0,
-                ),
-                Container(
-                  height: 50,
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: TextFormField(
-                      decoration:  const InputDecoration(
-                          prefixIcon: Icon(Icons.email_outlined,size: 28,
-                          color:  Color.fromARGB(255, 24, 59, 87),),
-                          hintText:" Email",
-                      ),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-                ),
+
+                SizedBox(height: MediaQuery.of(context).size.height /9 ),
+
+                // Email Text Form
+                textform(myicon: const Icon(Icons.email_outlined,size: 28, color:kPrimaryColor  ),
+                           hinttext: 'Email',),
+
                const SizedBox(height: 10),
-                Container(
-                  height: 50,
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20)
-                  ),
-                  child: TextFormField(
-                    decoration:  const InputDecoration(
-                        prefixIcon: Icon(Icons.key_outlined,size: 28,
-                          color:  Color.fromARGB(255, 24, 59, 87),),
-                        hintText:"Password" ,
 
-                    ),
-                     keyboardType: TextInputType.visiblePassword,
-                    ),
-                ),
+                //Password Text Form
+                textform(myicon: const Icon(Icons.key_outlined,size: 28, color:kPrimaryColor ),
+                    hinttext: 'Password'),
 
+                //Forgot Password
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(
                         onPressed: (){},
                         child: const Text(
-                          'Forgot Password?',
+                          'Forgot Password ?',
                           style: TextStyle(
                             color: Colors.blue,
                           ),
                         ),
                       ),
-                  ],
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  ],),
+
+                //Sing in Button
+                 Container(
+                  margin:const EdgeInsets.symmetric(horizontal: 20),
                   height: 40,
                   width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 24, 59, 87),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(9),
-                      ),
-                    ),
-                    child: const Text(
-                      'Sign in',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 50.0,
-                ),
+                  child: orginalButton(text: 'Sing In'),),
+
+                const SizedBox(height: 40.0,),
+
+                // text new user
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -110,11 +78,14 @@ class sing_page extends StatelessWidget {
                       'I\'m a new user,',
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(builder: (context)=> signUp_page()));
+                      },
                       child: const Text(
                         'Sign up',
                         style: TextStyle(
-                          color: Color.fromARGB(255, 24, 59, 87),
+                          color: kPrimaryColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
