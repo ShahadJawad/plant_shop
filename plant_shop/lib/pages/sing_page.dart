@@ -7,15 +7,30 @@ class sing_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     body: Container(
+      body: Container(
         decoration: const BoxDecoration(
-            image: DecorationImage(image: AssetImage(backroundimage),fit: BoxFit.fill)
+          image: DecorationImage(
+              image: AssetImage(backroundimage), fit: BoxFit.fill),
         ),
         child: Column(
           children: [
-             SizedBox(
-              height: MediaQuery.of(context).size.height /1.3,
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 1.4,
               //  height: 750.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                    onPressed: (){},
+                    child: const Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
+              ],
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 10),
@@ -24,7 +39,7 @@ class sing_page extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor:Color.fromARGB(255, 24, 59, 87),
+                  backgroundColor: Color.fromARGB(255, 24, 59, 87),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(9),
                   ),
@@ -62,7 +77,5 @@ class sing_page extends StatelessWidget {
         ),
       ),
     );
-
-
   }
 }
