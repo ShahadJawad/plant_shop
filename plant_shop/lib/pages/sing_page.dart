@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_shop/constants.dart';
 
@@ -14,9 +15,34 @@ class sing_page extends StatelessWidget {
         ),
         child: Column(
           children: [
-             
+            Padding(
+              padding: EdgeInsets.all(49.0),
+              child: Container(
+                child: const Image(
+                    image: AssetImage(backroundimag), fit: BoxFit.fill),
+              ),
+            ),
+             Center(
+        child: DefaultTextStyle(
+          style: TextStyle(
+            color: Color.fromARGB(255, 25, 120, 31),
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+          ),
+          child:
+            AnimatedTextKit(
+              repeatForever: true,
+              isRepeatingAnimation: true,
+              animatedTexts: [
+                WavyAnimatedText('No longer '),
+                WavyAnimatedText('to forgen wataring '),
+                WavyAnimatedText('your plants '),
+              ],
+            ),
+        ),
+             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 1.4,
+              height: MediaQuery.of(context).size.height / 4.9,
               //  height: 750.0,
             ),
             Row(
