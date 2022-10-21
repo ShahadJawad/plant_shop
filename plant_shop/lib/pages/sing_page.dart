@@ -1,36 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:plant_shop/constants.dart';
 
-class Sign_page extends StatefulWidget {
-  @override
-  State<Sign_page> createState() => _Sign_pageState();
-}
+class sing_page extends StatelessWidget {
+  const sing_page({Key? key}) : super(key: key);
 
-class _Sign_pageState extends State<Sign_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(50.0),
+     body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage(backroundimage),fit: BoxFit.fill)
+        ),
         child: Column(
           children: [
-            const SizedBox(
-              height: 750.0,
+             SizedBox(
+              height: MediaQuery.of(context).size.height /1.3,
+              //  height: 750.0,
             ),
             Container(
+              margin: EdgeInsets.symmetric(horizontal: 10),
               height: 40,
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {},
-                child: const Text(
-                  'Sign in',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor:Color.fromARGB(255, 24, 59, 87),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(9),
+                  ),
+                ),
+                child: const Text(
+                  'Sign in',
+                  style: TextStyle(
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -60,5 +62,7 @@ class _Sign_pageState extends State<Sign_page> {
         ),
       ),
     );
+
+
   }
 }
