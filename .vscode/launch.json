@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "plant_shop",
+            "cwd": "plant_shop",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "plant_shop (profile mode)",
+            "cwd": "plant_shop",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "plant_shop (release mode)",
+            "cwd": "plant_shop",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

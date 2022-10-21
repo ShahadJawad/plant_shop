@@ -14,6 +14,7 @@ class sing_page extends StatelessWidget {
         ),
         child: Column(
           children: [
+             
             SizedBox(
               height: MediaQuery.of(context).size.height / 1.4,
               //  height: 750.0,
@@ -22,14 +23,14 @@ class sing_page extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 TextButton(
-                    onPressed: (){},
-                    child: const Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: Colors.blue,
-                      ),
+                  onPressed: () {},
+                  child: const Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      color: Colors.blue,
                     ),
                   ),
+                ),
               ],
             ),
             Container(
