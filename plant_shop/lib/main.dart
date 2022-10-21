@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:plant_shop/pages/sing_page.dart';
 
-void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
+void main() => runApp(const
+ MaterialApp(
+  home: sing_page(),
+));
+
