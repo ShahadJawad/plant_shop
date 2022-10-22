@@ -1,9 +1,12 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_shop/constants.dart';
+import 'package:plant_shop/pages/signUp_page.dart';
+import 'package:plant_shop/widgets/orginalButton.dart';
+import 'package:plant_shop/widgets/textform.dart';
 
-class sing_page extends StatelessWidget {
-  const sing_page({Key? key}) : super(key: key);
+class sign_page extends StatelessWidget {
+  const sign_page({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +52,7 @@ class sing_page extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {},
+          //      Widget: null,
                   child: const Text(
                     'Forgot Password?',
                     style: TextStyle(
@@ -99,9 +103,9 @@ class sing_page extends StatelessWidget {
                 ),
               ],
             ),
-          ],
+          ),
         ),
-      ),
-    );
+      );
+    
   }
 }
