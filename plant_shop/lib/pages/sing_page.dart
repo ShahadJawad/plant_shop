@@ -22,25 +22,24 @@ class sing_page extends StatelessWidget {
                     image: AssetImage(backroundimag), fit: BoxFit.fill),
               ),
             ),
-             Center(
-        child: DefaultTextStyle(
-          style: TextStyle(
-            color: Color.fromARGB(255, 25, 120, 31),
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-          ),
-          child:
-            AnimatedTextKit(
-              repeatForever: true,
-              isRepeatingAnimation: true,
-              animatedTexts: [
-                WavyAnimatedText('No longer '),
-                WavyAnimatedText('to forgen wataring '),
-                WavyAnimatedText('your plants '),
-              ],
+            Center(
+              child: DefaultTextStyle(
+                style: TextStyle(
+                  color: Color.fromARGB(255, 25, 120, 31),
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
+                child: AnimatedTextKit(
+                  repeatForever: true,
+                  isRepeatingAnimation: true,
+                  animatedTexts: [
+                    WavyAnimatedText('No longer '),
+                    WavyAnimatedText('to forgen wataring '),
+                    WavyAnimatedText('your plants '),
+                  ],
+                ),
+              ),
             ),
-        ),
-             ),
             SizedBox(
               height: MediaQuery.of(context).size.height / 4.9,
               //  height: 750.0,
