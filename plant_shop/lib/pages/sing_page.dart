@@ -63,7 +63,7 @@ class sign_page extends StatelessWidget {
 
                 //Sing in Button
                  Container(
-                  margin:const EdgeInsets.symmetric(horizontal: 20),
+                  margin:const EdgeInsets.symmetric(horizontal: 21),
                   height: 40,
                   width: double.infinity,
                   child: orginalButton(text: 'Sing In'),),
