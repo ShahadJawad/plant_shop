@@ -1,10 +1,34 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_shop/constants.dart';
+import 'package:plant_shop/pages/sing_page.dart';
 import 'package:plant_shop/widgets/orginalButton.dart';
 import 'package:plant_shop/widgets/textform.dart';
 
-class signUp_page extends StatelessWidget {
-  const signUp_page({Key? key}) : super(key: key);
+class signUp_page extends StatefulWidget {
+  final VoidCallback showSignInPage;
+  const signUp_page({Key? key, required this.showSignInPage}) : super(key: key);
+
+  @override
+  State<signUp_page> createState() => _signUp_pageState();
+}
+
+class _signUp_pageState extends State<signUp_page> {
+  final _emailController = TextEditingController();
+  final _passwordController =TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+  Future signUp() async {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim());
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,27 +62,33 @@ class signUp_page extends StatelessWidget {
                 //email
                 const SizedBox(height: 10),
                 textform(myicon:const Icon(Icons.email_outlined, color:kPrimaryColor),
-                    hinttext: 'yourmail@gmail.com'),
+                    hinttext: 'yourmail@gmail.com',
+                    Controller: _emailController,
+                ),
 
                 //password
                 const SizedBox(height: 10),
                 textform(myicon:const Icon(Icons.key_outlined, color:kPrimaryColor),
-                    hinttext: '******'),
+                    hinttext: '******',
+                Controller: _passwordController,
+                ),
 
-                const SizedBox(height: 40),
+                //Sing Up
+                const SizedBox(height: 50),
                 Container(
                   margin:const EdgeInsets.symmetric(horizontal: 21),
                   height: 40,
                   width: double.infinity,
-                  child: orginalButton(text: 'Sing Up'),),
+                  child: orginalButton(text: 'Sing Up', onPressed: signUp),),
 
-                const SizedBox(height: 10),
-                  Container(
+
+                const SizedBox(height: 50),
+
+                Container(
                   height: 300,width: 250,
                   child:const Image(image: AssetImage('assest/images/logo.png')),
                 ),
 
-                const  SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -66,10 +96,7 @@ class signUp_page extends StatelessWidget {
                       'I\'m already a member,',
                     ),
                     TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context)=>const signUp_page()));
-                      },
+                      onPressed: widget.showSignInPage,
                       child: const Text(
                         'Sign In',
                         style: TextStyle(
