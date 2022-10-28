@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_shop/constants.dart';
+import 'package:plant_shop/pages/home_page.dart';
 import 'package:plant_shop/pages/signUp_page.dart';
 import 'package:plant_shop/widgets/orginalButton.dart';
 import 'package:plant_shop/widgets/textform.dart';
@@ -42,9 +43,24 @@ class _sign_pageState extends State<sign_page> {
             padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 1),
             child: Column(
               children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 30),
+                  child: TextButton(
+                  onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => home_page(),));},
+
+            child: const Text("Skip",
+              style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.blue,
+              ),
+            ),
+          ),
+                ),
+
                 //logo image
                 const Padding(
-                  padding: EdgeInsets.only(top: 55),
+                  padding: EdgeInsets.only(top: 5),
                     child: Image(image: AssetImage('assest/images/logo.png'),
                       height: 290,width: 250,)),
 
@@ -68,7 +84,8 @@ class _sign_pageState extends State<sign_page> {
                const SizedBox(height: 10),
 
                 //Password Text Form
-                textform(myicon: const Icon(Icons.key_outlined,size: 28, color:kPrimaryColor ),
+                textform(myicon: const Icon(Icons.key_outlined,
+                    size: 28, color:kPrimaryColor ),
                     hinttext: 'Password',
                     Controller: _passwordController,
                 ),

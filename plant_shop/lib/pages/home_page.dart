@@ -17,12 +17,9 @@ class _home_pageState extends State<home_page> {
       Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const[
 
-            Text("Signed in  "  ),
 
-            orginalButton(text: 'sign out ',
-                onPressed:(){ FirebaseAuth.instance.signOut();})
           ],
         ),
       ),
