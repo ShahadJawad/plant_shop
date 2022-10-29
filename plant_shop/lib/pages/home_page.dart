@@ -73,7 +73,7 @@ class _home_pageState extends State<home_page> {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.width / 9,
+                height: MediaQuery.of(context).size.width / 10,
               ),
               Container(
                 alignment: Alignment.topLeft,
@@ -84,6 +84,253 @@ class _home_pageState extends State<home_page> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 9,
+              ),
+              Expanded(
+                child:ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Padding(
+                      padding:EdgeInsets.all(0.8) ,
+                      child: Container(
+                        height: 120,
+                        width: 230,
+                        padding: EdgeInsets.all(.8),
+                        decoration: BoxDecoration(
+                          image:const DecorationImage(
+                            image:  AssetImage(
+                          'assest/images/plant3.png'
+                          ),
+                          ),
+                          borderRadius: BorderRadius.circular(25),
+                          color: Color.fromARGB(255, 203, 200, 200)
+                        ),
+                        child: Column(
+                          children: [
+                           const SizedBox(
+                              width: 22,
+                              height: 15,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                            children:const [
+                              Text(
+                        '35',
+                        style: TextStyle(
+                         // color: kPrimaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                              ),
+                            ],
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.width / 1.2,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children:[  
+                            Container(
+                              height: 32,
+                              width: 130,
+                        padding: EdgeInsets.all(.8),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 250, 250, 250),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child:    TextButton(
+                      onPressed: (){} ,
+                      child: const Text(
+                        'Add to Cat',
+                        style: TextStyle(
+                         // color: kPrimaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                                ),
+                            ),
+                            ),
+                            Container(
+                              height: 37,
+                              width: 40,
+                        padding: EdgeInsets.all(0.8),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 250, 250, 250),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Center(
+                          child:   IconButton(
+                      onPressed: (){},
+                     icon:Icon( Icons.favorite_border)
+                    ),
+                    ),
+                            )
+                          ],
+                            ),
+                          ],
+                          ),
+                      ),
+                      ),
+                      Padding(
+                      padding:EdgeInsets.all(0.8) ,
+                      child: Container(
+                        height: 120,
+                        width: 230,
+                        padding: EdgeInsets.all(.8),
+                        decoration: BoxDecoration(
+                          image:const DecorationImage(
+                            image:  AssetImage(
+                          'assest/images/plant4.png'
+                          ),
+                          ),
+                          borderRadius: BorderRadius.circular(25),
+                          color: Color.fromARGB(255, 203, 200, 200)
+                        ),
+                        child: Column(
+                          children: [
+                          const  SizedBox(
+                              width: 22,
+                              height: 15,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                            children:const [
+                              Text(
+                        '39',
+                        style: TextStyle(
+                         // color: kPrimaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                              ),
+                            ],
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.width / 1.2,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children:[  
+                            Container(
+                              height: 32,
+                              width: 130,
+                        padding: EdgeInsets.all(.8),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 250, 250, 250),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child:    TextButton(
+                      onPressed: (){} ,
+                      child: const Text(
+                        'Add to Cat',
+                        style: TextStyle(
+                         // color: kPrimaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                                ),
+                            ),
+                            ),
+                            Container(
+                              height: 37,
+                              width: 40,
+                        padding: EdgeInsets.all(0.8),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 250, 250, 250),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Center(
+                          child:   IconButton(
+                      onPressed: (){},
+                     icon:Icon( Icons.favorite_border)
+                    ),
+                    ),
+                            )
+                          ],
+                            ),
+                          ],
+                          ),
+                      ),
+                      ),
+                      Padding(
+                      padding:EdgeInsets.all(2) ,
+                      child: Container(
+                        height: 120,
+                        width: 230,
+                        padding: EdgeInsets.all(.8),
+                        decoration: BoxDecoration(
+                          image:const DecorationImage(
+                            image:  AssetImage(
+                          'assest/images/plant2.png'
+                          ),
+                          ),
+                          borderRadius: BorderRadius.circular(25),
+                          color: Color.fromARGB(255, 203, 200, 200)
+                        ),
+                        child: Column(
+                          children: [
+                          const    SizedBox(
+                              width: 22,
+                              height: 15,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                            children: const [
+                              Text(
+                        '49',
+                        style: TextStyle(
+                         // color: kPrimaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                              ),
+                            ],
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.width / 1.2,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children:[  
+                            Container(
+                              height: 32,
+                              width: 130,
+                        padding: EdgeInsets.all(.8),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 250, 250, 250),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child:    TextButton(
+                      onPressed: (){} ,
+                      child: const Text(
+                        'Add to Cat',
+                        style: TextStyle(
+                         // color: kPrimaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                                ),
+                            ),
+                            ),
+                            Container(
+                              height: 37,
+                              width: 40,
+                        padding: EdgeInsets.all(0.8),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 250, 250, 250),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Center(
+                          child:   IconButton(
+                      onPressed: (){},
+                     icon:Icon( Icons.favorite_border)
+                    ),
+                    ),
+                            )
+                          ],
+                            ),
+                          ],
+                          ),
+                      ),
+                      ),
+                  ],
+                )
               ),
             ],
           ),
