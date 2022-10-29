@@ -51,6 +51,8 @@ class _home_pageState extends State<home_page> {
         ),
       ),
 
+
+
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -88,6 +90,7 @@ class _home_pageState extends State<home_page> {
           // unselectedFontSize: 0,
           unselectedItemColor: Colors.black12,
         )
+
     );
   }
 }
