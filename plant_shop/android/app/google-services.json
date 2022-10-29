@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "523553730019",
+    "project_id": "plant-shop-bfd20",
+    "storage_bucket": "plant-shop-bfd20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523553730019:android:3e7f2f4a9c1acabcb884d6",
+        "android_client_info": {
+          "package_name": "com.example.plant_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523553730019-alv9k4jis8jjg2c88vm41v86m4a4rauk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYpEhG1pifT2M3iM9rh348nA3aM2pNSxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523553730019-alv9k4jis8jjg2c88vm41v86m4a4rauk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

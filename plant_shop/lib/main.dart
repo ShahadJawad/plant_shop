@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:plant_shop/pages/sing_page.dart';
-import 'package:plant_shop/sign_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'main_page.dart';
 
-void main() => runApp(
- MaterialApp(
-  home: sing_page(),
-));
-
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+ await   Firebase.initializeApp();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: sing_page(),
+      home: MainPage(),
     );
   }
 }
