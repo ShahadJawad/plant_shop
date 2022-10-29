@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class orginalButton extends StatelessWidget {
-   orginalButton({required this.text}) ;
-
-  String text ;
+   orginalButton({required this.text , required this.onPressed}) ;
+   final VoidCallback onPressed;
+   String text ;
   @override
   Widget build(BuildContext context) {
     return  ElevatedButton(
-    onPressed: () {},
+    onPressed: onPressed,
     style: ElevatedButton.styleFrom(
     backgroundColor:kPrimaryColor,
     shape: RoundedRectangleBorder(
