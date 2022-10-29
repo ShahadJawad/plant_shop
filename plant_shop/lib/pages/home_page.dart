@@ -1,12 +1,13 @@
+
 import 'dart:developer';
 import 'dart:ffi';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:plant_shop/list.dart';
 import 'package:plant_shop/widgets/orginalButton.dart';
 
 class home_page extends StatefulWidget {
-  const home_page({Key? key}) : super(key: key);
 
   @override
   State<home_page> createState() => _home_pageState();
@@ -25,30 +26,52 @@ class _home_pageState extends State<home_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.width / 4,
-              ),
-             firstCart(context),
-              SizedBox(
-                height: MediaQuery.of(context).size.width / 9,
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                child: const Text(
-                  'New Plants',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+        padding: const EdgeInsets.all(10.0),
+        child: Stack(
+          children: [
+            Column(
+                children: [
+                  // SizedBox(
+                  //   //  height: MediaQuery.of(context).size.width / 4,
+                  // ),
+                  firstCart(context),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width / 9,
                   ),
-                ),
-              ),
-            ],
-          ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: const Text(
+                      'New Plants',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+
+                ]
+            ),
+
+
+
+               Container(
+                 margin: EdgeInsets.only(top:MediaQuery.of(context).size.width / 1.5,
+                     left: 20,right: 20),
+
+                 child: ListView.builder(
+                     scrollDirection: Axis.horizontal,
+                     itemCount: cart_lists.length,
+                     itemBuilder: (context , index){
+                      return  cartPlant(cart2: cart_lists[index]);
+
+                    }
+
+            ),
+               ),
+          ]
         ),
+
+
       ),
 
 
