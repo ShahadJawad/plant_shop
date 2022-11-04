@@ -1,37 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:plant_shop/pages/plants_details.dart';
+import 'item.dart';
+import 'package:provider/provider.dart';
+class plant_list  with ChangeNotifier{
+  List<item> items = [];
+  String nor = 'noor' ;
 
-class plant_list {
-  final String img, Name, id, price;
-  plant_list(
-      {required this.Name,
-      required this.id,
-      required this.img,
-      required this.price});
+@override
+   notifyListeners();
 }
 
-List<plant_list> cart_lists = [
-  plant_list(
-      id: 'c1',
-      img: 'assest/images/plant2.png',
-      Name: 'Monstera',
-      price: '\$39'),
-  plant_list(
-      id: 'c2',
-      img: 'assest/images/plant3.png',
-      Name: 'Ageratum',
-      price: '\$18'),
-  plant_list(
-      id: 'c3', img: 'assest/images/plant4.png', Name: 'gester', price: '\$40'),
-];
 
 class cartPlant extends StatelessWidget {
-  const cartPlant({Key? key, required this.cart2}) : super(key: key);
-  final plant_list cart2;
+  const cartPlant({Key? key,  required this.cart2}) : super(key: key);
+  final item cart2;
 
   @override
   Widget build(BuildContext context) {
+    int indx =0;
+    count(){
+
+     return indx++;
+    }
     return Padding(
-      padding: EdgeInsets.only(bottom: 40),
+      padding: EdgeInsets.only(bottom: 5),
       child: Container(
           margin: EdgeInsets.symmetric(horizontal: 5),
           decoration: BoxDecoration(
@@ -44,18 +36,21 @@ class cartPlant extends StatelessWidget {
                 Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 3, top: 5),
-                    child: Text(cart2.price,
-                        style: const TextStyle(fontWeight: FontWeight.bold))),
+                    child: Consumer<plant_list>(builder: (context ,plant,child){
+                      return  Text(cart2.price,
+                          style: const TextStyle(fontWeight: FontWeight.bold));
+                    }
+                    )),
                 Container(
                     padding: EdgeInsets.only(top: 25),
                     child: Image(
                       image: AssetImage(cart2.img),
-                      height: 200,
+                      height: 150,
                     )),
                 Text(cart2.Name,
                     style: const TextStyle(fontWeight: FontWeight.bold)),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 15),
+                  padding: EdgeInsets.only(top: 25),
                   child: Row(children: [
                     Container(
                       padding: EdgeInsets.all(12),
@@ -78,6 +73,8 @@ class cartPlant extends StatelessWidget {
               ],
             ),
           )),
+
     );
   }
 }
+

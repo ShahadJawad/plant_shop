@@ -1,11 +1,11 @@
-import 'dart:developer';
-import 'dart:ffi';
 
+import '../lists/item.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:plant_shop/list.dart';
+import 'package:plant_shop/lists/list.dart';
+import 'package:plant_shop/lists/item.dart';
+import 'package:plant_shop/pages/plants_details.dart';
 import 'package:plant_shop/widgets/orginalButton.dart';
-
 class home_page extends StatefulWidget {
   @override
   State<home_page> createState() => _home_pageState();
@@ -23,68 +23,80 @@ class _home_pageState extends State<home_page> {
   @override
   //final user =FirebaseAuth.instance.currentUser!;
   Widget build(BuildContext context) {
+
+
     return Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Stack(children: [
-            Column(children: [
-              SizedBox(
-              height: MediaQuery.of(context).size.width / 10,
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                child: const Text(
-                  'Find your \nfavorite plants',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25
-                  ),
-                ),
-              ),
-               Container(
-                padding: const EdgeInsets.fromLTRB(0, 20, 150, 0),
-                 child: TextField(
-                  
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Color.fromARGB(255, 240, 240, 240),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(9),
-                      borderSide: BorderSide.none
+              padding: const EdgeInsets.all(10.0),
+              child: Stack(children: [
+                Column(children: [
+                    SizedBox(
+                    height: MediaQuery.of(context).size.width / 10,
                     ),
-                    prefixIcon: Icon(Icons.search),
-                    hintText: 'Search...'
-                  ),
-              ),
-               ),
-              firstCart(context),
-              SizedBox(
-                height: MediaQuery.of(context).size.width / 11,
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                child: const Text(
-                  'New Plants',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: const Text(
+                        'Find your \nfavorite plants',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25
+                        ),
+                      ),
+                    ),
+                     Container(
+                      padding: const EdgeInsets.fromLTRB(0, 20, 150, 0),
+                       child: TextField(
+                        
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Color.fromARGB(255, 240, 240, 240),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(9),
+                            borderSide: BorderSide.none
+                          ),
+                          prefixIcon: Icon(Icons.search),
+                          hintText: 'Search...'
+                        ),
+                    ),
+                     ),
+                    firstCart(context),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.width / 11,
+                    ),
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: const Text(
+                        'New Plants',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ]),
+
+                Container(
+                  margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.width / 1,
+                      ),
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: items.length,
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                            onTap: (){
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context)=> PlantsDetails(
+                                     cart2: items[index],
+                                  )
+                                  ));},
+                            child: cartPlant(cart2: items[index]));}
                 ),
-              ),
-            ]),
-            Container(
-              margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.width / 1,
-                  ),
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: cart_lists.length,
-                  itemBuilder: (context, index) {
-                    return cartPlant(cart2: cart_lists[index]);
-                  }),
-            ),
-          ]),
+                )
+              ]
+                )
         ),
+
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -123,7 +135,8 @@ class _home_pageState extends State<home_page> {
           onTap: _onItemTapped,
           // unselectedFontSize: 0,
           unselectedItemColor: Colors.black12,
-        ));
+        )
+    );
   }
 }
 
