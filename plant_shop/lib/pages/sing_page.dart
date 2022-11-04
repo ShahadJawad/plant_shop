@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_shop/constants.dart';
 import 'package:plant_shop/pages/home_page.dart';
@@ -101,7 +102,7 @@ class _sign_pageState extends State<sign_page> {
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context)=> signUp_page()));
+                            MaterialPageRoute(builder: (context)=> signUp_page(showSignInPage: () {  },)));
                       },
                       child: const Text(
                         'Sign up',
